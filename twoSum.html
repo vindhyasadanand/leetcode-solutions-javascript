@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var twoSum = function(nums,targer){
+  //nums is an array of integers
+  //i need to return the index of the elements which results into given target
+  //we created empty object to hold the difference 
+  let seen = {};
+  for(let i=0;i<nums.length;i++)
+  {
+    var sumsPartner = target - nums[i];
+    //to check if already sumsPartner is exist in our seen array
+    //if it exists then we are returning its index and current index 
+    if(seen[sumsPartner]!==undefined)
+    {
+      return [seen[sumsPartner],i];
+    }
+    else{
+      //if sumsPartner does not exist then we should place current array element inside the seen object
+      seen[nums[i]] = i;
+      //and we should set its value as its index
+
+    }
+  }
+
+
+};
+var arr = [1,2,3,4,5];
+var target = 6;
+var result = twoSum(arr,target);
+console.log(result);
+</script>
+</body>
+</html>

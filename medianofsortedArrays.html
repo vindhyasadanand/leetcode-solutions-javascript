@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     /* Logic Used
+like merge function in mergesort
+-> Using mergesort i sorted given two arrays 
+->And while sorting i copied all sorted elements into new array
+->Then from the sorted array find out median
+
+ */
+var findMedianSortedArrays = function(nums1, nums2) {
+     const results = [];
+    let leftIndex = 0;
+    let rightIndex = 0;
+    //this loop will run untill it completes all the elements in one of the array
+   while(leftIndex<nums1.length&& rightIndex<nums2.length)
+       {
+           //comparing num1 elements with num2 elements
+           if(nums1[leftIndex]<nums2[rightIndex])
+               {
+                   results.push(nums1[leftIndex]);
+                   leftIndex++;
+               }
+               else
+                   {
+                       results.push(nums2[rightIndex]);
+                       rightIndex++;
+                   }
+           
+            
+       }
+    //copy remaining elements from num1 incase if it is remaining
+    while(leftIndex<nums1.length)
+        {
+            results.push(nums1[leftIndex])
+            leftIndex++;
+        }
+      //copy remaining elements from num2 incase if it is remaining
+     while(rightIndex<nums2.length)
+        {
+            results.push(nums2[rightIndex]);
+            rightIndex++;
+        }
+        let length = results.length;
+    //to find the median
+     if(length%2==0)
+     { 
+         //if array length is even then median will be like this
+       let mid = length/2;
+       let median =( results[mid]+results[mid-1])/2;
+       return median;
+     }
+     else
+     {
+         //if there are odd number of elements 
+       let middle = Math.floor(length/2);
+      return  results[middle]
+     }
+    
+  
+};
+const median = findMedianSortedArrays([1,2,3],[4]);
+console.log(median);
+    </script>
+</body>
+</html>

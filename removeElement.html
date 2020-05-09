@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Problem statement</h2>
+    <p>We are given an array with duplicate elements and a value
+        and we need to check if array element matches with given value if it does not matches then we place that element at the beginning of the array
+  And we should return length of the other elements in the array by ignoring given value
+    </p>
+
+</head>
+<body>
+    <script>
+        var removeElement = function(nums, val) {
+     let j = 0;
+    let count=0;
+    //to iterate through all the elements of the array
+    for(let i=0;i<nums.length;i++)
+        {
+            if(nums[i]!==val)
+            {
+                nums[j] = nums[i]; 
+                j++;
+                
+                count++;  
+            }
+       }
+    return count;
+    
+};
+    </script>
+</body>
+</html>
