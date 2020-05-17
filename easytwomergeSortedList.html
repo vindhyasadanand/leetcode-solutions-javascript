@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+  var mergeTwoLists = function(l1, l2)
+  {
+    if (l1 == null) 
+    {
+        return l2
+    }
+    if (l2 == null)
+    {
+        return l1
+    }
+      // to create head of the list
+    const head = new ListNode(null)
+    //assign head to a variable
+      let current = head
+    while (l1 !== null  && l2 !== null)
+    {   
+        //to compare elements of lists
+         if (l1.val <l2.val) 
+        {
+            //to create a new node with the value as l1.value
+           const n1 = new ListNode(l1.val)
+           //to insert node n1 to the current node
+           current.next = n1;
+            //we are making now current to point to n1
+            current = n1;
+            //and list is pointing to next node now
+           l1=l1.next;
+        } 
+        //element present in l2 is grater than l1 then
+        else  
+        {
+            //create a node with value l2.value
+            const n2 = new ListNode(l1.val)
+            //we are inserting n2 to the current node
+            current.next = n2
+            //we are making n2 to point current node
+            current = n2
+            //now l2 is pointing to next node
+            l2 = l2.next                   
+        } 
+        
+    }   
+        //to copy remaining elememts from the list l1
+        while(l1!==null)
+       {
+            const node = new ListNode(l1.value);
+             current.next = node;
+             current = node;
+           l1=l1.next;
+                
+       }
+        //to copy remaining elements from list l2
+         while(l2!==null)
+         {
+             const node_2 = new ListNode(l2.value);
+             current.next = node_2;
+             current = node_2;
+             l2 =l2.next;
+         }    
+    
+    return head.next;
+
+};   
+    </script>
+</body>
+</html>

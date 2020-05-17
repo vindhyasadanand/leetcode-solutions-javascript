@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calLength(list)
+        {
+            let count = 0;
+            while(list!==null)
+            {
+                list = list.next;
+                count++;
+            }
+            return count;
+        }
+        class Node
+        {
+            constructor(value,next = null)
+            {
+                this.value=value;
+                this.next=next;
+            }
+        }
+   function insertRear(head,value)
+   {
+        let node = new Node();
+       if(this.head==null)
+       {
+           head = node;
+           return node;
+       }
+       else{
+           let current = head;
+           while(current.next!==null)
+           {
+               current = current.next;
+           }
+           current.next=node;
+       }
+       return head;
+   }
+
+
+function merge(list1,list2)
+{
+    insertRear(value)
+    {
+        let node = new Node(value);
+    }
+   length1 = calLength(list1);
+   length2 = calLength(list2);
+   let leftList= 0;
+   let rightList= 0;
+   let head = null;
+   while(leftList<length1 && rightList < length2)
+   {
+       if(lis1.value <= list2.value)
+       {
+           insertRear(head,list1.value);
+           leftList ++;
+
+       }
+       else
+       {
+           insertRear(head,list2.value);
+           rightList++;
+       }
+       list1=list1.next;
+       list2=list2.next;
+   }
+   while(leftList<list1)
+   {
+       insertRear(head,list1.value);
+       list1=list1.next;
+
+   }
+   while(rightList<list2)
+   {
+        insertRear(head,list2.value);
+        list2 = list2.next;
+   }
+
+}
+
+
+    </script>
+</body>
+</html>
